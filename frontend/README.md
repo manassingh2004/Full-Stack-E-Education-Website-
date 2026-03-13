@@ -1,16 +1,142 @@
-# React + Vite
+# 🎓 Educational Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **course selling web platform** where users can explore courses, view course details, register/login, and simulate course enrollment with a payment page.
 
-Currently, two official plugins are available:
+This project is built using **React and Vite** with a clean and responsive UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 🏠 **Home Page** with hero section and course highlights
+* 📚 **Courses Page** to explore available courses
+* 📄 **Course Detail Page** with detailed course information
+* 🔐 **User Authentication Pages**
 
-## Expanding the ESLint configuration
+  * Login
+  * Register
+* 💳 **Payment Page** for course enrollment simulation
+* 🧭 **Responsive Navigation Bar**
+* 📦 **Reusable Components** like CourseCard, Navbar, Footer
+* ⚡ Fast development using **Vite**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+* React.js
+* Vite
+* CSS
+
+**Tools**
+
+* Git
+* GitHub
+* VS Code
+
+---
+
+## 📂 Project Structure
+
+```
+edu-platform
+│
+├── frontend
+│   ├── src
+│   │   ├── Components
+│   │   │   ├── CourseCard.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── Footer.jsx
+│   │   │
+│   │   ├── pages
+│   │   │   ├── Home.jsx
+│   │   │   ├── Courses.jsx
+│   │   │   ├── CourseDetail.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   └── Payment.jsx
+│   │   │
+│   │   ├── assets
+│   │   │   ├── react.jpg
+│   │   │   ├── javascript.jpg
+│   │   │   └── node.jpg
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── package.json
+│   └── vite.config.js
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```
+git clone https://github.com/manassingh2004/Educational-Website.git
+```
+
+Go to the project folder:
+
+```
+cd Educational-Website/frontend
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the development server:
+
+```
+npm run dev
+```
+
+Open in browser:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📸 Screenshots
+
+Add screenshots of:
+
+* Home Page
+* Courses Page
+* Course Detail Page
+* Payment Page
+
+---
+
+## 🎯 Future Improvements
+
+* Add **Backend (Node.js / Express)**
+* Integrate **Database (MongoDB)**
+* Add **Real Payment Gateway (Stripe / Razorpay)**
+* Add **Admin Dashboard for course management**
+
+---
+
+## 👨‍💻 Author
+
+**Manas Kumar Singh**
+
+* B.Tech CSE Graduate
+* Frontend Developer | React Learner
+
+🔗 LinkedIn
+https://www.linkedin.com/in/manas-kr-singh-6913b3255/
+
+---
+
+⭐ If you like this project, please consider giving it a **star on GitHub**!
