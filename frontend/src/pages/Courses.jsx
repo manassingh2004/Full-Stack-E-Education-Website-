@@ -1,57 +1,91 @@
-import CourseCard from "../Components/CourseCard";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import reactImg from "../assets/react.jpg";
-import nodeImg from "../assets/node.jpg";
-import jsImg from "../assets/javascript.jpg";
+const Courses = () => {
+  const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
-function Courses() {
-  const courses = [
-    {
-      title: "React Development",
-      description: "Build modern frontend applications with components, hooks and routing.",
-      image: reactImg,
-      category: "Frontend",
-      rating: "4.8",
-      students: "12k",
-      duration: "8 Weeks",
-      price: "₹999",
-    },
-    {
-      title: "Node.js Backend",
-      description: "Learn backend development using Node.js, Express and REST APIs.",
-      image: nodeImg,
-      category: "Backend",
-      rating: "4.7",
-      students: "10k",
-      duration: "10 Weeks",
-      price: "₹1199",
-    },
-    {
-      title: "JavaScript Mastery",
-      description: "Master modern JavaScript concepts and build real-world projects.",
-      image: jsImg,
-      category: "Programming",
-      rating: "4.9",
-      students: "15k",
-      duration: "6 Weeks",
-      price: "₹899",
-    },
-  ];
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/courses");
+        const data = await response.json();
+        setCourses(data);
+      } catch (error) {
+        console.log("Error fetching courses:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  const filteredCourses = courses.filter(
+    (course) =>
+      course.title.toLowerCase().includes(search.toLowerCase()) ||
+      course.category.toLowerCase().includes(search.toLowerCase())
+  );
+
+  if (loading) {
+    return (
+      <div className="courses-page">
+        <div className="courses-header">
+          <h1>Our Courses</h1>
+          <p>Loading courses...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="courses-page">
       <div className="courses-header">
         <h1>Our Courses</h1>
-        <p>Choose the best course and start learning with professional guidance.</p>
+        <p>Choose the right course and start learning today.</p>
+      </div>
+
+      <div className="course-search-box">
+        <input
+          type="text"
+          placeholder="Search courses by name or category..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
 
       <div className="courses-wrapper">
-        {courses.map((course, index) => (
-          <CourseCard key={index} {...course} />
-        ))}
+        {filteredCourses.length > 0 ? (
+          filteredCourses.map((course) => (
+            <div className="course-card" key={course.id}>
+              <div className="course-card-content">
+                <span className="course-category">{course.category}</span>
+                <h3>{course.title}</h3>
+                <p>{course.desc}</p>
+
+                <div className="course-meta">
+                  <span>{course.duration}</span>
+                  <span>{course.level}</span>
+                  <span>{course.instructor}</span>
+                </div>
+
+                <div className="course-footer">
+                  <h4>{course.price}</h4>
+                  <button onClick={() => navigate(`/course/${course.id}`)}>
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="no-course-found">No courses found.</p>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Courses;

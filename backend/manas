@@ -1,0 +1,8 @@
+backend
+├── data
+│   └── courses.js
+├── routes
+│   ├── authRoutes.js
+│   ├── courseRoutes.js
+│   └── paymentRoutes.js
+└── server.js
