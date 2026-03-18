@@ -7,7 +7,8 @@ const courses = [
     duration: "8 Weeks",
     level: "Beginner",
     price: "₹1999",
-    instructor: "Manas Singh"
+    instructor: "Manas Singh",
+    image: "https://via.placeholder.com/300x200?text=React+Course"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const courses = [
     duration: "6 Weeks",
     level: "Beginner",
     price: "₹1499",
-    instructor: "Manas Singh"
+    instructor: "Manas Singh",
+    image: "https://via.placeholder.com/300x200?text=JavaScript+Course"
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const courses = [
     duration: "10 Weeks",
     level: "Intermediate",
     price: "₹2499",
-    instructor: "Manas Singh"
+    instructor: "Manas Singh",
+    image: "https://via.placeholder.com/300x200?text=Node.js+Course"
   }
 ];
 
